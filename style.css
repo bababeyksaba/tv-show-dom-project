@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    
+}
+.header{
+    margin: auto;
+    font-size: 35px;
+
+
+}
+.container{
+    display: flex;
+    margin: 30px;
+   
+}
+
+.search-box{
+    
+    margin-left: 20px;  
+    
+}
+.option{
+    border: 1px solid ;
+    width: 500px;
+    height: 30px;
+}
+.search-style{
+    width: 300px;
+    height: 30px;
+}
+#showcase{
+    display: grid;
+    width: 100vw;
+    grid-template-columns: repeat(5,minmax(100px,auto));
+    gap: 40px;
+   
+    
+     
+   
+    
+}
+.div-style{
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+   align-items: center;
+   justify-content:space-around;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+  margin-top: 100px;
+
+}
+.containerkoli{
+   background-image: url("https://cdn.suwalls.com/wallpapers/tv-shows/game-of-thrones-cast-52807-1920x1200.jpg");
+   background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 60vh;
+    padding: 40px;
+}
+.styly-3{
+   
+}
