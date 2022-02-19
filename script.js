@@ -5,7 +5,16 @@ const showcase = document.querySelector("#showcase")
 const search = document.getElementById("search")
 const allEpisodes = document.getElementById("allepisodes")
 fetch(url).then( (response) => response.json()).then( (data) => {
-    // console.log(data)
+    console.log(data)
+    //summary
+    const summary = data.filter((e) => {
+        console.log(e.summary)
+    })
+    //url
+    const url = data.filter((e) => {
+        console.log(e.url)
+    })
+
     showImage(data)
     select.addEventListener("change", () =>{
 
@@ -40,30 +49,29 @@ const clear = () => {
 const showImage = (data) => {
 
     for( const element of data){
-        const div = document.createElement("div")
-        
-        // div.style.alignItems="center";
-        div.classList.add("div-style")
-        const img = document.createElement("img")
-        img.src = element.image.medium
-        const h3 = document.createElement("h3")
-        
-
+        const div = document.createElement("div");
+        div.classList.add("div-style");
+        const img = document.createElement("img");
+        img.classList.add("img-style");
+        img.src = element.image.medium;
+        const h4 = document.createElement("h4")
+        h4.classList.add("h4-style")
+        const span = document.createElement("span")
+        span.innerHTML='<i class="bi bi-file-play"></i>';
         if( element.number <10){
-           h3.textContent = element.name + " S" +element.season + " E" +"0" +element.number;
-
+           h4.textContent = element.name + " S" +element.season + " E" +"0" +element.number;
+        }else{
+            h4.textContent = element.name + " S" + element.season + " E" +element.number;
         }
-        else{
-
-            h3.textContent = element.name + " S" + element.season + " E" +element.number;
-        }
-
         const option = document.createElement("option")
-        option.textContent = element.name
-        option.value = option.textContent 
-        div.append(img,h3)
-        showcase.append(div)
-        select.append(option)
+        option.textContent = element.name;
+        option.value = option.textContent ;
+        const rate = document.createElement("p");
+        rate.textContent = element.rating.average;
+        rate.style.fontSize="25px"
+        div.append(img,h4,span,rate);
+        showcase.append(div);
+        select.append(option);
         
     
     }
